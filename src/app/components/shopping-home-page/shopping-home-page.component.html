@@ -1,0 +1,64 @@
+<body>
+
+  <div class="menu-head-all">
+    <div class="menu-head-infor">
+
+      <div class="head-infor-add">
+
+      </div>
+
+    </div>
+
+
+    <div class="menu-head-search-cart">
+      <div class="header-with-search">
+        <!-- logo -->
+        <div class="header-with-search__logo-section">
+          <img
+            src="https://scontent-hkg4-1.xx.fbcdn.net/v/t1.15752-9/139022126_417146856276610_5808429896015505517_n.jpg?_nc_cat=102&ccb=2&_nc_sid=ae9488&_nc_ohc=b_Y0SNpJ6U0AX8DZ6zm&_nc_ht=scontent-hkg4-1.xx&oh=54788b5996f6f070909781e547642795&oe=602D1D8C"
+            alt="logo">
+        </div>
+        <!-- Search -->
+        <div class="header-with-search__search-section">
+          <div class="shopee-searchbar">
+            <div class="search-input">Search input</div>
+
+            <button class=" button-search-item">
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
+        </div>
+        <!-- Button Cart -->
+        <div class="header-with-search__cart-wrapper">
+          <div class="cart-drawer-container">
+            <a class="cart-drawer" href="">
+              <i class="fas fa-shopping-cart"></i>
+              <div class="shop-cart-number-badge">6868</div>
+              <!-- số động get length của chuỗi -->
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div><!-- menu-head-all -->
+
+  <div class="home-page-detail-all">
+    <div class="detail-all">
+      <div class="container">
+        <div class="row" *ngFor="let item of dataShopItem">
+
+          <div class="col-sm  item-detail">
+            <img src="{{item.img}}" alt="">
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- <div>{{dataShopItem | json }}</div> -->
+
+</body>

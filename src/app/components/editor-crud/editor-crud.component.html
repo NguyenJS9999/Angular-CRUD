@@ -1,0 +1,69 @@
+<body>
+
+  <div class="from-group input-information">
+    <div class="form-input-information">
+
+      <div class="title"> Create Update Ddelete </div>
+
+      <b>Add id?</b> <br>
+
+      <input [(ngModel)]="addID"  [disabled]="isUpdate"  type="text"> <br>
+
+      <b>Add news</b> <br>
+
+      <input [(ngModel)]="addNews" type="text"> <br>
+
+      <b>Add Content</b> <br>
+
+      <input [(ngModel)]="addContent" type="text"> <br>
+
+      <button *ngIf="!isUpdate" (click)="insertAddData()">Insert/Save/ADD</button>
+      <button *ngIf="isUpdate" (click)="update()">Update</button>
+
+    </div>
+
+    <div class="form-group form-search-information">
+      <b>Search title</b> <br>
+
+      <input style="border: 4px violet solid" [(ngModel)]="searchInput"><br>
+
+      <button (click)="searchData()" type="submit">Search</button> <br>
+
+      <!-- <div >News: {{filterItem.news}}</div> -->
+
+
+    </div>
+
+
+
+  </div>
+
+  <!-- Hiện tất cả chuỗi các object data -->
+
+  <div class="table-view">
+
+    <table class="table-view-detail" border=1>
+      <tr>
+        <th>Id</th>
+        <th>News</th>
+        <th>Content</th>
+        <th>Sửa/Xóa</th>
+        <!-- <th>Image</th> -->
+      </tr>
+
+      <tr *ngFor="let item of dataNews">
+        <td> {{item.id}} </td>
+        <td> {{item.news}} </td>
+        <td> {{item.content}} </td>
+        <td>
+          <button (click)="editData(item)">Edit</button>
+          <button (click)="deleteData(item)">Delete</button>
+        </td>
+        <!-- <td style="width:31%"> <img src="{{item.image}}" alt="image"> </td> -->
+      </tr>
+    </table>
+
+  </div>
+
+
+</body>

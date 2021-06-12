@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<title>Home</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
+
+
+<body>
+  <!-- Top menu -->
+  <div class="top-menu">
+    <div class="top-menu-1">
+      <div class="title ">Home Detail</div>
+      <button class="logOutButton" (click)="logOut()">Log out</button>
+
+    </div>
+
+  </div>
+  <!-- Search -->
+  <div class="menu-search">
+
+    <button [routerLink]="['/EditorCRUD']" class="add-data">Add data</button>
+
+    <div class="form-group  input-search">
+
+      <input [(ngModel)]="searchInput">
+      <button (click)="onSearch()">Seach</button>
+      <!-- <div> {{searchInput}} </div> --> <br>
+    </div>
+
+    <div class="ket-qua-tra-ve"> Kết quả trả về: <b>{{filterItem}}</b> </div>
+
+  </div>
+  <!-- Search -->
+
+  <div class="main-content">
+
+    <div class="list-content-left">
+      <!-- Link đi theo ID, còn hiển thị key là news -->
+      <div class="list-news" *ngFor="let item of dataNews">
+        <a class="news" [routerLink]="[item.id]">{{item.news}}</a>
+
+      </div>
+    </div>
+
+    <!-- <div class="list-content-right">
+      <app-oil-lubricant></app-oil-lubricant>
+    </div> -->
+
+  </div> <!-- main -->
+</body>
+
+</html>

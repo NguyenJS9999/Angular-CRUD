@@ -1,0 +1,59 @@
+<div class="main">
+
+  <form action="" method="POST" class="form" id="register-form">
+
+    <p class="desc">Registration Validate form❤️</p>
+
+    <div class="spacer"></div>
+    <!--  -->
+    <div class="form-group ">
+
+      <label for="fullname" class="form-label">Tên đăng nhập - Nguyen </label>
+
+      <input [(ngModel)]="userName" id="username" name="username" type="text" placeholder="Enter username"
+        class="form-control" value="">
+
+      <span id="username_error"></span>
+
+      {{userName}}
+
+      <span style="color: red;" *ngIf="usernameErrors"> {{usernameErrors}} !!! </span>
+
+
+
+    </div>
+    <!--  -->
+    <div class="form-group">
+      <label for="number" class="form-label">Mật khẩu - 123456</label>
+
+      <input [(ngModel)]="passWordNumber" id="number" name="number" type="text" class="form-control"
+        placeholder="Enter password" value="123456">
+
+      {{passWordNumber}}
+
+      <span style="color: red;" *ngIf="passWordErrors"> {{passWordErrors}} !!! </span>
+
+
+
+    </div>
+
+    <!--  -->
+    <button (click)="onSubmit()" type="submit" class="form-submit">Đăng nhập</button>
+
+
+    <div class="button-test">
+      <!--  -->
+      <button class="getHome" [routerLink]="['/home/']"> Home page </button>
+      <!--  -->
+      <span> <button class="getHome" (click)="Hide()">Ẩn hoặc hiện</button> </span> <br>
+
+      <span class="text-hide" *ngIf="!hideInformation"> Fail validate!!! {{hideInformation}} </span> <br>
+      <!--  -->
+      <button class="anHien" (click)="donate.money = donate.money - 1">--</button>
+
+      <button class="anHien" (click)="donate.money =donate.money + 1">++</button>
+
+      <p class="text-hide"> Money = {{donate.money}} </p>
+      <!--  -->
+    </div>
+  </form>
